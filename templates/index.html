@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Publication Search</title>
+</head>
+<body>
+    <h1>Search for Publications</h1>
+    <form action="/search" method="post">
+        <h4>Choose your Search Terms</h4>
+        <select name="author">
+            <option disabled selected value="">Authors</option>
+            <option value="CC Members">CC Members</option>
+        </select>
+        <select name="term">
+            <option disabled selected value="">Term 1</option>
+            <option value="Cancer">Cancer</option>
+        </select>
+        <select name="ccsg">
+            <option disabled selected value="">Term 2</option>
+            <option value="ccsg">CCSG</option>
+        </select>
+        <input type="Submit" value="Submit Search">
+    </form>
+
+
+</body>
+</html>
