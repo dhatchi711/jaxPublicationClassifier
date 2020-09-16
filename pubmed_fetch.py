@@ -105,6 +105,3 @@ def getdata1(records, search):
         data.append("")
         alldata.append(data)
     return alldata
-
-records = fetchMetadata2(lala, 'Cancer')
-print(records)

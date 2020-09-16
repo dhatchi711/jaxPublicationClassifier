@@ -6,9 +6,15 @@
 </head>
 <body>
 
+<a href="{{url_for('download_file', start = start, end = end)}}"><h4>Download Excel File</h4></a>
+<form action="/">
+  <input type="submit" value="Find More Publications">
+</form>
+<br>
 {% block body %}
 {{ dataframe|safe }}
 {% endblock %}
+
 
 </body>
 </html>
