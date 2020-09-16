@@ -80,21 +80,22 @@ def constructSearchURL(searchTerm, startDate, endDate):
 
 
 def add_to_df(cclist):
-    columns = ['PMID','Title', 'Authors', 'FirstAuthor', 'Citation', 'Journal', 'PublicationDate', 'CreateDate', 'PMCID',
+    columns = ['PMID', 'Title', 'Authors', 'FirstAuthor', 'Citation', 'Journal', 'PublicationDate', 'CreateDate',
+               'PMCID',
                'DOI', 'SearchString', 'CCSGSearch']
     df = pd.DataFrame(cclist, columns=columns)
     return df
-    #df.to_excel("list.xlsx")
+    # df.to_excel("list.xlsx")
 
 
 def main(start, end):
-    start = start.replace("-","/")
-    end = end.replace("-","/")
+    start = start.replace("-", "/")
+    end = end.replace("-", "/")
     print(start)
     print(end)
     cc_pmids = constructSearchURL(author_search, start, end)
     print(cc_pmids)
-    cc_results = pubmed_fetch.fetchMetadata(cc_pmids, ccSearch)
+    cc_results = pubmed_fetch.fetchMetadata2(cc_pmids, ccSearch)
     print(cc_results)
     cancer_pmids = constructSearchURL(cancer_search, start, end)
     for i in range(len(cc_results)):
