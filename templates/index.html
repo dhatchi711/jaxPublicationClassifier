@@ -1,28 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8">
-    <title>Publication Search</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PubMed Search</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<style>
+	.login-form {
+		width: 340px;
+    	margin: 50px auto;
+	}
+    .login-form form {
+    	margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .login-form h2 {
+        margin: 0 0 15px;
+    }
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+    .btn {
+        font-size: 15px;
+        font-weight: bold;
+    }
+</style>
 </head>
-<body>
-    <h1>Search for Publications</h1>
-    <form action="/search" method="post">
-        <h4>Choose your Search Terms</h4>
-        <select name="author">
-            <option disabled selected value="">Authors</option>
-            <option value="CC Members">CC Members</option>
-        </select>
-        <select name="term">
-            <option disabled selected value="">Term 1</option>
-            <option value="Cancer">Cancer</option>
-        </select>
-        <select name="ccsg">
-            <option disabled selected value="">Term 2</option>
-            <option value="ccsg">CCSG</option>
-        </select>
-        <input type="Submit" value="Submit Search">
+<body style="background-color:powderblue;">
+<div class="login-form">
+    <form action="/result" method="post">
+        <h3 class="text-center">Pubmed Search by Dhatchi K</h3>
+        <br>
+        <div class="form-group">
+        <label for="authors">Please Select from the Following Options:</label>
+            <select name="authors" class="form-control" id="authors">
+                <option selected disabled>Select Authors</option>
+                <option>CC Members</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <select name="terms" class="form-control" id="terms">
+                <option selected disabled>Select Terms</option>
+                <option>Cancer Terms for CC Members</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <select name="ccsg" class="form-control" id="grantsupport">
+                <option selected disabled>Select Support Grants</option>
+                <option>CCSG Grant</option>
+          </select>
+        </div>
+        <div class="text-center">
+            <label for="authors">Please Select A Date Range:</label>
+        <br>
+        <label for="start">Start date :</label>
+        <input type="date" id="start" name="start-date">
+        <label for="start">End date :</label>
+        <input type="date" id="end" name="end-date">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Search</button>
+        </div>
     </form>
-
-
+</div>
 </body>
 </html>

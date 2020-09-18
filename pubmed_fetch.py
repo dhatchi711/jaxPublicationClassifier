@@ -85,7 +85,20 @@ def fetchMetadata2(lala, search):
 def getdata1(records, search):
     alldata = []
     for i in records:
+        print(i)
+    for i in records:
+        print("CURRENT PMID", i)
         print("getting data")
+        data = []
+        if 'id:' in i:
+            data.append(i)
+            for i in range(11):
+                data.append("Error")
+            print(data)
+            alldata.append(data)
+            print(alldata)
+            print("fail")
+            continue
         data = [i['PMID'], i['TI'], i['AU'], i['AU'][0], i['SO'], i['TA'], i['DP'], i['CRDT']]
         try:
             data.append(i['PMC'])
@@ -105,3 +118,4 @@ def getdata1(records, search):
         data.append("")
         alldata.append(data)
     return alldata
+

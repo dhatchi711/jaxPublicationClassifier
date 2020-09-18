@@ -94,7 +94,7 @@ def main(start, end):
     print(start)
     print(end)
     cc_pmids = constructSearchURL(author_search, start, end)
-    print(cc_pmids)
+    print("This is cc_pmids ", cc_pmids)
     cc_results = pubmed_fetch.fetchMetadata2(cc_pmids, ccSearch)
     print(cc_results)
     cancer_pmids = constructSearchURL(cancer_search, start, end)
@@ -110,3 +110,5 @@ def main(start, end):
 
     df = add_to_df(cc_results)
     return df
+
+
