@@ -99,7 +99,14 @@ def getdata1(records, search):
             print(alldata)
             print("fail")
             continue
-        data = [i['PMID'], i['TI'], i['AU'], i['AU'][0], i['SO'], i['TA'], i['DP'], i['CRDT']]
+        data = [i['PMID'], i['TI'], i['AU'], i['AU'][0], i['SO'], i['TA'], i['CRDT']]
+        try:
+            date = i['DEP']
+            date_formatted = date[:4] + '-' + date[4:6] + '-' + date[6:8]
+            data.append(date_formatted)
+        except:
+            data.append(i['DP'])
+        print("This is pub date", data[7])
         try:
             data.append(i['PMC'])
         except:
@@ -118,4 +125,3 @@ def getdata1(records, search):
         data.append("")
         alldata.append(data)
     return alldata
-
