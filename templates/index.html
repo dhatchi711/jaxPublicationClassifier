@@ -15,17 +15,21 @@
 
 <style>
 	.login-form {
-		width: 340px;
-    	margin: 50px auto;
+		width: 1000px;
+    	margin: 200px auto;
+    	text-align: center;
+	}
+	.date-range {
+	    align: center
+	    width: 1000px
+	    margin: 250px auto
+	    padding: 20px
 	}
     .login-form form {
     	margin-bottom: 15px;
         background: #f7f7f7;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 3px 4px 25px rgba(0, 0, 0, 0.3);
         padding: 30px;
-    }
-    .login-form h2 {
-        margin: 0 0 15px;
     }
     .form-control, .btn {
         min-height: 38px;
@@ -34,36 +38,47 @@
     .btn {
         font-size: 15px;
         font-weight: bold;
+        margin: 50px auto;
+        margin-left: 500px auto;
     }
+    .select {
+    text-align: center;
+}
+
 </style>
 </head>
-<body style="background-color:powderblue;">
+<body style="background-color: #AED6F1;">
+
 <div class="login-form">
     <form action="/result" method="post">
-        <h3 class="text-center">Pubmed Search by Dhatchi K</h3>
+        <h3 class="text-center">Pubmed Search</h3>
         <br>
-        <div class="form-group">
-        <label for="authors">Please Select from the Following Options:</label>
+        <h4>Please Select from the Following Options:</h4>
+        <br>
+        <div class="text=center">
+        <div class="col-lg-4 col-md-3 col-sm-12 p-0">
             <select name="authors" class="form-control" id="authors">
                 <option selected disabled>Select Authors</option>
                 <option>CC Members</option>
             </select>
         </div>
-        <div class="form-group">
+        </div>
+        <div class="col-lg-4 col-md-3 col-sm-12 p-0">
             <select name="terms" class="form-control" id="terms">
                 <option selected disabled>Select Terms</option>
                 <option>Cancer Terms for CC Members</option>
             </select>
         </div>
-        <div class="form-group">
+        <div class="col-lg-4 col-md-3 col-sm-12 p-0">
             <select name="ccsg" class="form-control" id="grantsupport">
                 <option selected disabled>Select Support Grants</option>
                 <option>CCSG Grant</option>
           </select>
         </div>
-        <div class="text-center">
-            <label for="authors">Please Select A Date Range:</label>
         <br>
+        <br>
+        <div class="text-center">
+            <h4 for="authors">Please Select A Date Range:</h4>
         <label for="start">Start date :</label>
         <input type="date" id="start" name="start-date">
         <label for="start">End date :</label>
@@ -72,6 +87,15 @@
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">Search</button>
         </div>
+        <p>
+            Retrieval Times:
+            <br>
+            Up to 1 Minutes for a Date Range of 6 Months
+                        <br>
+            Up to 3 Minutes for a Date Range of 1 Year
+                        <br>
+            Up to 5 Minutes for a Date Range of 2 Years
+        </p>
     </form>
 </div>
 </body>

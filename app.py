@@ -38,9 +38,11 @@ def download_file(start, end):
     start = start
     end = end
     dfName = start + "TO" + end + ".xlsx"
-    return send_file('/Users/kgovid/PycharmProjects/jaxPublicationClassifier1/' + dfName,
-                     attachment_filename=dfName)
-
+    print(dfName)
+    directory = dfName
+    print(directory)
+    return send_file(filename_or_fp=directory,
+                     as_attachment=True)
 
 if __name__ == '__main__':
     app.debug = True
