@@ -1,29 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8">
-    <title>Publication Search</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PubMed Search</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<style>
+	.login-form {
+		width: 1000px;
+    	margin: 200px auto;
+    	text-align: center;
+	}
+	.date-range {
+	    align: center
+	    width: 1000px
+	    margin: 250px auto
+	    padding: 20px
+	}
+    .login-form form {
+    	margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 3px 4px 25px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+    .btn {
+        font-size: 15px;
+        font-weight: bold;
+        margin: 50px auto;
+        margin-left: 500px auto;
+    }
+    .select {
+    text-align: center;
+}
+
+</style>
 </head>
-<body>
-    <h1>Please Resubmit Your Search for Publications</h1>
+<body style="background-color: #AED6F1;">
+
+<div class="login-form">
+    <form action="/result" method="post">
+        <h3 class="text-center">Pubmed Search</h3>
         <br>
-    <form action="/search" method="post">
-        <h4>Choose your Search Terms</h4>
-        <select name="author">
-            <option disabled selected value="">Authors</option>
-            <option value="CC Members">CC Members</option>
-        </select>
-        <select name="term">
-            <option disabled selected value="">Term 1</option>
-            <option value="Cancer">Cancer</option>
-        </select>
-        <select name="ccsg">
-            <option disabled selected value="">Term 2</option>
-            <option value="ccsg">CCSG</option>
-        </select>
-        <input type="Submit" value="Submit Search">
+        <h4>Please Resubmit Search with ALL Options Selected:</h4>
+        <br>
+        <div class="text=center">
+        <div class="col-lg-4 col-md-3 col-sm-12 p-0">
+            <select name="authors" class="form-control" id="authors">
+                <option selected>CC Members</option>
+            </select>
+        </div>
+        </div>
+        <div class="col-lg-4 col-md-3 col-sm-12 p-0">
+            <select name="terms" class="form-control" id="terms">
+                <option selected>Cancer Terms for CC Members</option>
+            </select>
+        </div>
+        <div class="col-lg-4 col-md-3 col-sm-12 p-0">
+            <select name="ccsg" class="form-control" id="grantsupport">
+                <option selected>CCSG Grant</option>
+          </select>
+        </div>
+        <br>
+        <br>
+        <div class="text-center">
+            <h4 for="authors">Please Select A Date Range:</h4>
+        <label for="start">Start date :</label>
+        <input type="date" id="start" name="start-date">
+        <label for="start">End date :</label>
+        <input type="date" id="end" name="end-date">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Search</button>
+        </div>
+        <p>
+            Retrieval Times:
+            <br>
+            Up to 1 Minutes for a Date Range of 6 Months
+                        <br>
+            Up to 3 Minutes for a Date Range of 1 Year
+                        <br>
+            Up to 5 Minutes for a Date Range of 2 Years
+        </p>
     </form>
-
-
+</div>
 </body>
 </html>

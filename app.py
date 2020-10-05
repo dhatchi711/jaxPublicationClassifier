@@ -17,6 +17,9 @@ app.secret_key = 'secret'
 def search_select():
     return render_template('index.html')
 
+@app.route('/retry')
+def search_retry():
+    return render_template('resubmit.html')
 
 @app.route('/result', methods=['POST'])
 def result():
@@ -26,7 +29,7 @@ def result():
     terms = request.form.get("terms")
     ccsg = request.form.get("ccsg")
     if not start or not end or not authors or not terms or not ccsg:
-        return redirect(url_for('search_select'))
+        return redirect(url_for('search_retry'))
     df = pubmed_search.main(start, end)
     dfName = start + "TO" + end + ".xlsx"
     df.to_excel('/Users/kgovid/PycharmProjects/jaxPublicationClassifier1/' + dfName)

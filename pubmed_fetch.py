@@ -91,13 +91,7 @@ def getdata1(records, search):
         print("getting data")
         data = []
         if 'id:' in i:
-            data.append(i)
-            for i in range(11):
-                data.append("Error")
-            print(data)
-            alldata.append(data)
-            print(alldata)
-            print("fail")
+            print("This got removed", i)
             continue
         data = [i['PMID'], i['TI'], i['AU'], i['AU'][0], i['SO'], i['TA'], i['CRDT']]
         try:
