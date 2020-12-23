@@ -93,7 +93,7 @@ def getdata1(records, search):
         if 'id:' in i:
             print("This got removed", i)
             continue
-        data = [i['PMID'], i['TI'], i['AU'], i['AU'][0], i['SO'], i['TA'], i['CRDT']]
+        data = [int(i['PMID']), i['TI'], i['AU'], i['AU'][0], i['SO'], i['TA'], i['CRDT']]
         try:
             date = i['DEP']
             date_formatted = date[:4] + '-' + date[4:6] + '-' + date[6:8]

@@ -32,7 +32,7 @@ def result():
         return redirect(url_for('search_retry'))
     df = pubmed_search.main(start, end)
     dfName = start + "TO" + end + ".xlsx"
-    df.to_excel('/Users/kgovid/PycharmProjects/jaxPublicationClassifier1/' + dfName)
+    df.to_excel('/Users/kgovid/PycharmProjects/jaxPublicationClassifier1/' + dfName, index=False)
     return render_template("simple.html", dataframe=df.to_html(), start=start, end=end)
 
 

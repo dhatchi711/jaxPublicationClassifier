@@ -60,6 +60,7 @@ def constructSearchURL(searchTerm, startDate, endDate):
     page_count = search_terms.page_count
     num_of_returns = search_terms.page_returns
     full_Search_URL = search_URL + search_term_URL + date_range_URL + num_of_returns
+    print("This is full search URL " + full_Search_URL)
     page = ur.urlopen(full_Search_URL)
     soup = BeautifulSoup(page, "html.parser")
     try:
